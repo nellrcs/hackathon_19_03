@@ -1,0 +1,20 @@
+<div class="container">
+	<table class="table" ng-init="listar()">
+		<thead>
+		<tr>
+			<td><strong>Codigo</strong></td>
+			<td><strong>Nome</strong></td>
+			<td><strong>idade</strong></td>
+			<td><strong>cpf</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="atleta in atletas">
+				<td>{{atleta.codigoAtleta}}</td>
+				<td>{{atleta.name}}</td>
+				<td>{{atleta.idade}}</td>
+				<td>{{atleta.cpf}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>	

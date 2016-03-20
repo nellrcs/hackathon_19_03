@@ -1,0 +1,49 @@
+<div class="container" ng-init="listar()">
+
+
+<div class="col-lg-8">
+	<h1>Lista</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<td><strong>Código</strong></td>
+				<td><strong>Nome</strong></td>
+				<td><strong>Idade</strong></td>
+				<td><strong>Cpf</strong></td>
+				<td><strong>Opção</strong></td>
+			</tr>
+		</thead>
+		<tbody>	
+		<tr ng-repeat="atleta in atletas">
+			<td width="5%">{{atleta.codigoAtleta}}</td>
+			<td width="30%">{{atleta.name}}</td>
+			<td width="5%">{{atleta.idade}}</td>
+			<td width="40%">{{atleta.cpf}}</td>
+			<td width="15%">
+				<a ng-click="selecionar(atleta)" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
+				<a ng-click="apagar(atleta)" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove"></i></a>
+			</td>
+
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div class="col-lg-4">
+	<h2>{{ selecionado && "Ediar" || "Novo" }}</h2>
+	<form ng-submit="salvarEditar()">
+		<label for="">Código do Atleta</label>
+		<input type="text" ng-model="atleta.codigoAtleta" class="form-control">		
+		<label for="">Nome</label>
+		<input type="text" ng-model="atleta.name" class="form-control">		
+
+		<label for="">idade</label>
+		<input type="number" ng-model="atleta.idade" class="form-control">	
+
+		<label for="">cpf</label>
+		<input type="text" ng-model="atleta.cpf" class="form-control">
+		<br>
+		<button class="btn btn-success" >{{ selecionado && "Ediar" || "Salvar" }}</button>
+		<button ng-show="selecionado" class="btn btn-default" >Cancelar</button>
+	</form>
+</div>
+</div>
